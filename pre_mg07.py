@@ -1,7 +1,7 @@
 '''
 Identity-Based Proxy Re-Encryption
   
-| From: "M. Green, G. Ateniese  IIdentity-Based Proxy Re-Encryption", Section 4.3.
+| From: "M. Green, G. Ateniese Identity-Based Proxy Re-Encryption", Section 4.3.
 | Published in: Applied Cryptography and Network Security. Springer Berlin/Heidelberg, 2007
 | Available from: http://link.springer.com/chapter/10.1007%2F978-3-540-72738-5_19
 
@@ -97,7 +97,7 @@ class Pre_MatthewGreen:
             print('r => %s' % r)
             print('sigma => %s' % sigma)
             print int2Bytes(m)
-        return None
+        return int2Bytes(m)
     
     def rkGen(self, params, skid, IDsrc, IDdest):
         N = integer(randomBits(group.secparam))
@@ -136,5 +136,5 @@ class Pre_MatthewGreen:
             print('K => %s' % K)
             print('sigma => %s' % sigma)
             print int2Bytes(m) 
-        return None 
+        return int2Bytes(m) 
 	       		   		
