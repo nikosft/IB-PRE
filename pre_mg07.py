@@ -1,11 +1,7 @@
 '''
 Identity-Based Proxy Re-Encryption
-  
-<<<<<<< HEAD
+
 | From: "M. Green, G. Ateniese Identity-Based Proxy Re-Encryption", Section 4.3.
-=======
-| From: "M. Green, G. Ateniese  Identity-Based Proxy Re-Encryption", Section 4.3.
->>>>>>> c5cf284812eac2c9f3c22a07599bf245f58aa166
 | Published in: Applied Cryptography and Network Security. Springer Berlin/Heidelberg, 2007
 | Available from: http://link.springer.com/chapter/10.1007%2F978-3-540-72738-5_19
 
