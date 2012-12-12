@@ -62,7 +62,7 @@ class Pre_MatthewGreen:
 		
     def encrypt(self, params, ID, M):
         enc_M = integer(M)
-        if bitsize(enc_M) > group.messageSize():
+        if bitsize(enc_M)/8 > group.messageSize():
             print("Message cannot be encoded.")
             return None
         sigma = group.random(GT)
