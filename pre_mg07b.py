@@ -11,28 +11,30 @@ Identity-Based Proxy Re-Encryption
 :Authors:    N. Fotiou
 :Date:       11/2012
 '''
-from charm.toolbox.pairinggroup import ZR,G1,GT,pair
+from charm.toolbox.pairinggroup import pc_element,ZR,G1,G2,GT,pair
 from charm.core.math.integer import integer,bitsize, int2Bytes, randomBits
 from charm.toolbox.hash_module import Hash
 from charm.core.engine.util import objectToBytes
 
 debug = False
-class Pre_MatthewGreen:
+class PreGA:
     """
-    >>> from charm.toolbox.pairinggroup import PairingGroup  
+    >>> from charm.toolbox.pairinggroup import PairingGroup,pc_element  
     >>> ID = "nikos fotiou"
     >>> ID2 = "test user"
     >>> msg = "hello world!!!!!"
     >>> group = PairingGroup('SS512', secparam=1024)  
-    >>> pre = Pre_MatthewGreen(group)
+    >>> pre = PreGA(group)
     >>> (master_secret_key, params) = pre.setup()
     >>> id_secret_key = pre.keyGen(master_secret_key, ID)
     >>> id2_secret_key = pre.keyGen(master_secret_key, ID2)
     >>> ciphertext = pre.encrypt(params, ID, msg);
     >>> pre.decryptFirstLevel(params,id_secret_key, ciphertext, ID)
+    'hello world!!!!!'
     >>> re_encryption_key = pre.rkGen(params,id_secret_key, ID, ID2)
     >>> ciphertext2 = pre.reEncrypt(params, ID, re_encryption_key, ciphertext)
     >>> pre.decryptSecondLevel(params,id2_secret_key,ID, ID2, ciphertext2)
+    'hello world!!!!!'
     """
     def __init__(self, groupObj):
         global group,h
@@ -59,7 +61,7 @@ class Pre_MatthewGreen:
             print("Key for id => '%s'" % ID)
             group.debug(skid)
         return skid
-		
+
     def encrypt(self, params, ID, M):
         enc_M = integer(M)
         if bitsize(enc_M)/8 > group.messageSize():
@@ -96,7 +98,7 @@ class Pre_MatthewGreen:
             print('t => %s' % t)
             print('r => %s' % r)
             print('sigma => %s' % sigma)
-            print int2Bytes(m)
+            print(int2Bytes(m))
         return int2Bytes(m)
     
     def rkGen(self, params, skid, IDsrc, IDdest):
@@ -135,6 +137,6 @@ class Pre_MatthewGreen:
             print('\nDecrypting Second Level...')
             print('K => %s' % K)
             print('sigma => %s' % sigma)
-            print int2Bytes(m) 
+            print(int2Bytes(m)) 
         return int2Bytes(m) 
-	       		   		
+
