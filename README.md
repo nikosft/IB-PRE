@@ -1,8 +1,8 @@
 IB-PRE
 ======
 An implementation of the Identity-based proxy re-encryption scheme published in:<br/>
-M. Green, G. Ateniese, "Identity-Based Proxy Re-Encryption," in Applied Cryptography and Network Security. Springer Berlin/Heidelberg, 2007<br/>
-available at: http://link.springer.com/chapter/10.1007%2F978-3-540-72738-5_19
+> M. Green, G. Ateniese, "Identity-Based Proxy Re-Encryption," in Applied Cryptography and Network Security. Springer Berlin/Heidelberg, 2007<br/>
+Available at: http://link.springer.com/chapter/10.1007%2F978-3-540-72738-5_19
 
 In order to use this class install Charm-Crypto library(http://charm-crypto.com/)
 
