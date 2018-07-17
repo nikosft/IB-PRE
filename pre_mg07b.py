@@ -43,7 +43,7 @@ class PreGA:
         
     def setup(self):
         s = group.random(ZR) 
-        g =  group.random(G1)
+        g = group.random(G1)
         # choose H1-H6 hash functions
         msk = { 's':s }
         params = { 'g':g, 'g_s':g**s}
@@ -68,7 +68,7 @@ class PreGA:
             print("Message cannot be encoded.")
             return None
         sigma = group.random(GT)
-        r = h.hashToZr(sigma,M)
+        r = h.hashToZr(sigma,enc_M)
         A = params['g'] ** r 
         B = sigma * pair(params['g_s'], group.hash(ID, G1) ** r)
         C = enc_M ^ h.hashToZn(sigma)      
