@@ -5,7 +5,7 @@ An implementation of the Identity-based proxy re-encryption scheme published in:
 
 Available at: http://link.springer.com/chapter/10.1007%2F978-3-540-72738-5_19
 
-In order to use this class install Charm-Crypto library(http://charm-crypto.com/)
+In order to use this class install [Charm-Crypto library](https://github.com/JHUISI/charm/)
 
 ## List of files 
 * pre_mg07a.py Contains the first construction of Green and Ateniese, described in section 4.1
